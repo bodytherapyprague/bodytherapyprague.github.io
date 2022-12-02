@@ -16,13 +16,17 @@ a {
     font-size: inherit;
     text-decoration: none;
 }
-
+.banner {
+    width: 50%;
+    margin-top: -10px;
+    margin-left: -100px;
+}
 
 /*======================================================
                           Navbar
   ======================================================*/
 #navbar {
-    background: white;
+    background: lightgrey;
     color: rgb(13, 26, 38);
     position: fixed;
     top: 0;
