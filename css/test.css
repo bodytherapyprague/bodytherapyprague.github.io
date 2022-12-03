@@ -44,7 +44,7 @@ a {
     height: 60px;
     line-height: 60px;
     width: 100vw;
-    z-index: 10;
+    z-index: 1;
 }
 
 .nav-wrapper {
@@ -168,7 +168,7 @@ a {
         top: 20px;
         height: 23px;
         width: 27px;
-        z-index: 12;
+        z-index: 2;
     }
 
     /* Icon Bars */
