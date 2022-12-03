@@ -6,8 +6,19 @@
 }
 
 body {
-    background: rgb(250, 250, 250) url(http://lorempixel.com/1920/1080/nature/);
     font-family: Lato, Helvetica, Arial, sans-serif;
+
+    /* Image Location */
+    background-image: url(/images/massage-bg.jpg);
+
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    /* Font Colour */
+    color:white;
 }
 
 a {
@@ -73,9 +84,10 @@ a {
     text-align: right;
     transition: transform 0.5s ease-out;
     -webkit-transition: transform 0.5s ease-out;
-} @media(max-width: 640px) {
+} @media(max-width: 1235px) {
     #navbar ul {
         display: none;
+        margin-top: -200px;
     }
 } @media(orientation: landscape) {
     #navbar ul {
@@ -147,7 +159,7 @@ a {
 /*======================================================
                     Mobile Menu Menu Icon
   ======================================================*/
-@media(max-width: 640px) {
+@media(max-width: 1235px) {
     .menuIcon {
         cursor: pointer;
         display: block;
@@ -284,7 +296,7 @@ a {
                    Responsive Mobile Menu
   ======================================================*/
 .overlay-menu {
-    background: lightblue;
+    background: darkgray;
     color: rgb(13, 26, 38);
     display: flex;
     align-items: center;
@@ -311,7 +323,7 @@ a {
     letter-spacing: 4px;
     /*   opacity: 0; */
     padding: 10px 0;
-    text-align: right;
+    text-align: center;
     text-transform: uppercase;
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
