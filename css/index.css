@@ -4,11 +4,38 @@
     margin: 0;
     padding: 0;
 }
+:root {
+    --color-light: #333844;
+    --color-dark: lightgray;
+    --bg-color-light: white;
+    --bg-color-dark: darkgray;
+    --navbar-color-light: lightgrey;
+    --navbar-color-dark: grey;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: var(--bg-color-light);
+        --color: var(--color-light);
+        --navbar-color: var(--navbar-color-light);
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: var(--bg-color-dark);
+        --color: var(--color-dark);
+        --navbar-color: var(--navbar-color-dark);
+    }
+}
+[data-light], [data-dark] {
+    opacity: 0;
+}
 
 body {
     font-family: Lato, Helvetica, Arial, sans-serif;
+    font-size: large;
 
-    /* Image Location */
+    /* Image Location *
     background-image: url(/images/massage-bg.jpg);
 
     /* Background image is centered vertically and horizontally at all times */
@@ -16,9 +43,13 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-color: #464646;
-    /* Font Colour */
-    color:white;
+
+    /* Bg Color */
+    background-color: var(--bg-color);
+    /* Font Color */
+    color: var(--color);
+
+
 }
 
 a {
@@ -37,8 +68,8 @@ a {
                           Navbar
   ======================================================*/
 #navbar {
-    background: lightgrey;
-    color: rgb(13, 26, 38);
+    background: var(--navbar-color);
+    color: var(--color);
     position: fixed;
     top: 0;
     height: 60px;
@@ -71,7 +102,7 @@ a {
     text-transform: uppercase;
 } @media(max-width: 768px) {
     .logo {
-        /*       margin-left: 5px; */
+               margin-left: 5px;
     }
 }
 
@@ -84,10 +115,10 @@ a {
     text-align: right;
     transition: transform 0.5s ease-out;
     -webkit-transition: transform 0.5s ease-out;
-} @media(max-width: 1235px) {
+} @media(max-width: 1287px) {
     #navbar ul {
         display: none;
-        margin-top: -200px;
+        margin-top: -2000px;
     }
 } @media(orientation: landscape) {
     #navbar ul {
@@ -100,7 +131,7 @@ a {
 }
 
 #navbar li a {
-    color: rgb(13, 26, 38);
+    color: var(--color);
     display: block;
     font-size: 0.7em;
     height: 50px;
@@ -116,7 +147,7 @@ a {
 
 #navbar li a:hover {
     /* border-bottom: 1px solid rgb(28, 121, 184); */
-    color: rgb(28, 121, 184);
+    color: black;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
 }
@@ -128,7 +159,7 @@ a {
     width: 0%;
     height: 1px;
     bottom: -1px;
-    background: rgb(13, 26, 38);
+    background: var(--color);
 }
 
 #navbar li a:before {
@@ -143,7 +174,7 @@ a {
 }
 
 #navbar li a:hover:before {
-    background: rgb(13, 26, 38);
+    background: var(--color);
     width: 100%;
     transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
@@ -159,7 +190,7 @@ a {
 /*======================================================
                     Mobile Menu Menu Icon
   ======================================================*/
-@media(max-width: 1235px) {
+@media(max-width: 1287px) {
     .menuIcon {
         cursor: pointer;
         display: block;
@@ -168,12 +199,12 @@ a {
         top: 20px;
         height: 23px;
         width: 27px;
-        z-index: 12;
+        z-index: 100;
     }
 
     /* Icon Bars */
     .icon-bars {
-        background: rgb(13, 26, 38);
+        background: var(--bg-color);
         position: absolute;
         left: 1px;
         top: 45%;
@@ -184,7 +215,7 @@ a {
     }
 
     .icon-bars::before {
-        background: rgb(13, 26, 38);
+        background: var(--bg-color);
         content: '';
         position: absolute;
         left: 0;
@@ -199,7 +230,7 @@ a {
 
     .icon-bars::after {
         margin-top: 0px;
-        background: rgb(13, 26, 38);
+        background: var(--bg-color);
         content: '';
         position: absolute;
         left: 0;
@@ -215,7 +246,6 @@ a {
     /* Bars Shadows */
     .icon-bars.overlay {
         background: rgb(97, 114, 129);
-        background: rgb(183, 199, 211);
         width: 20px;
         animation: middleBar 3s infinite 0.5s;
         -webkit-animation: middleBar 3s infinite 0.5s;
@@ -231,7 +261,6 @@ a {
 
     .icon-bars.overlay::before {
         background: rgb(97, 114, 129);
-        background: rgb(183, 199, 211);
         width: 10px;
         animation: topBar 3s infinite 0.2s;
         -webkit-animation: topBar 3s infinite 0s;
@@ -247,7 +276,6 @@ a {
 
     .icon-bars.overlay::after {
         background: rgb(97, 114, 129);
-        background: rgb(183, 199, 211);
         width: 15px;
         animation: bottomBar 3s infinite 1s;
         -webkit-animation: bottomBar 3s infinite 1s;
@@ -296,7 +324,7 @@ a {
                    Responsive Mobile Menu
   ======================================================*/
 .overlay-menu {
-    background: darkgray;
+    backdrop-filter: blur(10px);
     color: rgb(13, 26, 38);
     display: flex;
     align-items: center;
